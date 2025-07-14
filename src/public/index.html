@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearCompany-Paylocity PoC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4" role="heading" aria-level="1">ClearCompany-Paylocity PoC</h1>
+    <section aria-label="Test APIs">
+      <h2>Test APIs</h2>
+      <button class="btn btn-primary" onclick="testApi()">Test Job Creation</button>
+      <pre id="output" aria-live="polite"></pre>
+    </section>
+  </div>
+  <script>
+    async function testApi() {
+      const output = document.getElementById('output');
+      try {
+        const response = await fetch('/api/jobs', { method: 'POST' });
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        output.textContent = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClearCompany-Paylocity PoC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <h1>ClearCompany-Paylocity Integration</h1>
+  <button id="createJob">Create Job</button>
+  <button id="getJobStatus">Get Job Status (12345)</button>
+  <button id="getCandidate">Get Candidate (67890)</button>
+  <button id="sendWebhook">Test Webhook</button>
+  <div id="response"></div>
+  <script src="/js/event.js"></script>
+</body>
+</html>

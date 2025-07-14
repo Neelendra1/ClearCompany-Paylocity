@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+logs.db
+logs/
+*.log
+
+# Build output (if any)
+dist/
+build/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+coverage/
+jest-coverage/
+
+# SQLite temporary files
+*.sqlite3
+*.db-journal
+
+# MacOS specific
+._*
+
+# Windows specific
+Desktop.ini
+$RECYCLE.BIN/
