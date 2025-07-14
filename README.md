@@ -150,7 +150,7 @@ Set environment variables via Heroku Dashboard or CLI.
 Scale dynos: heroku ps:scale web=1
 
 
-Contributing
+**Contributing**
 
 Fork the repository.
 Create a feature branch: git checkout -b feature-name
