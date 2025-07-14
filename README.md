@@ -1,6 +1,8 @@
 **ClearCompany-Paylocity PoC**
+
 This is a Proof of Concept (PoC) application demonstrating integration between ClearCompany and Paylocity Web Services. It simulates job creation, status updates, candidate management, and webhooks using a mock Paylocity server and a minimal Express-based backend with a Bootstrap-styled UI.
-Features
+
+**Features**
 
 **API Endpoints:**
 
