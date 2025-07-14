@@ -1,8 +1,8 @@
-ClearCompany-Paylocity PoC
+**ClearCompany-Paylocity PoC**
 This is a Proof of Concept (PoC) application demonstrating integration between ClearCompany and Paylocity Web Services. It simulates job creation, status updates, candidate management, and webhooks using a mock Paylocity server and a minimal Express-based backend with a Bootstrap-styled UI.
 Features
 
-API Endpoints:
+**API Endpoints:**
 
 POST /api/jobs: Creates or updates a job in ClearCompany using Paylocity requisition data.
 GET /api/jobs/:jobId/status: Retrieves the status of a job.
@@ -10,50 +10,50 @@ GET /api/candidates/:candidateId: Fetches candidate details.
 POST /webhooks/status: Processes status updates via webhooks, simulating Paylocity employee data submission.
 
 
-Mock Paylocity Server:
+**Mock Paylocity Server:**
 
 Runs locally to simulate Paylocity Web Services API (OAuth 2.0 and requisition/employee endpoints).
 Configurable via environment variables.
 
 
-UI:
+**UI:**
 
 Bootstrap 5-based interface for testing endpoints.
 Responsive design with buttons for each API call and a response display area.
 
 
-Logging:
+**Logging:**
 
 Uses SQLite (logs.db) with Winston for persistent, queryable logs.
 Supports debugging and auditing.
 
 
-Security:
+**Security:**
 
 Implements Content Security Policy (CSP) via Helmet to prevent XSS.
 Excludes sensitive data (e.g., .env) from version control.
 
 
 
-Prerequisites
+**Prerequisites**
 
 Node.js: v20.x (LTS) or v22.13.0
 npm: v9.x or later
 SQLite: For log storage (install via sqlite.org)
 Git: For version control
 
-Installation
+**Installation**
 
 Clone the Repository:
 git clone https://github.com/yourusername/clearcompany-paylocity-poc.git
 cd clearcompany-paylocity-poc
 
 
-Install Dependencies:
+**Install Dependencies:**
 npm install
 
 
-Set Up Environment Variables:
+**Set Up Environment Variables:**
 
 Create a .env file in the root directory with the following content:PORT=3000
 CLEARCOMPANY_API_KEY=mock-clearcompany-key
@@ -69,7 +69,7 @@ MOCK_PORT=3001
 Note: Do not commit .env to Git; use .env.example as a template.
 
 
-Verify SQLite:
+**Verify SQLite:**
 
 Ensure SQLite is installed and accessible:sqlite3 --version
 
@@ -79,7 +79,7 @@ Ensure SQLite is installed and accessible:sqlite3 --version
 
 Running the Application
 
-Start the Mock Paylocity Server:
+**Start the Mock Paylocity Server:**
 
 In one terminal:node mock-paylocity-server.js
 
@@ -95,7 +95,7 @@ In another terminal:npm start
 Expected output: info: Server running on port 3000
 
 
-Access the UI:
+**Access the UI:**
 
 Open http://localhost:3000 in a browser.
 Click buttons ("Create Job", "Get Job Status", "Get Candidate", "Test Webhook") to test endpoints.
@@ -105,7 +105,7 @@ Responses appear in the card below the buttons.
 
 Testing
 
-Unit Tests:
+**Unit Tests:**
 
 Run tests with:npm test
 
@@ -113,7 +113,7 @@ Run tests with:npm test
 Coverage is tracked (currently ~82.92% for services).
 
 
-API Testing:
+**API Testing:**
 
 Use curl or Postman:curl -X POST http://localhost:3000/api/jobs
 curl http://localhost:3000/api/jobs/12345/status
@@ -123,7 +123,7 @@ curl -X POST http://localhost:3000/webhooks/status -H "Content-Type: application
 
 Debugging
 
-Check Logs:
+**Check Logs:**
 
 Query logs.db with SQLite:sqlite3 logs.db
 SELECT * FROM logs WHERE level='error' ORDER BY timestamp DESC;
@@ -133,14 +133,14 @@ SELECT * FROM logs WHERE level='error' ORDER BY timestamp DESC;
 Or use DB Browser for SQLite for a GUI interface.
 
 
-Browser Console:
+**Browser Console:**
 
 Open Developer Tools (F12) in the browser to view JavaScript errors or network issues.
 
 
 Deployment (Optional)
 
-Heroku:
+**Heroku:**
 Install Heroku CLI and log in.
 Create a Heroku app: heroku create clearcompany-paylocity-poc
 Push code: git push heroku master
@@ -161,4 +161,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Acknowledgements
 
 Built with Express.js, Bootstrap, and SQLite.
-Inspired by xAI's Grok 3 integration guidelines.
