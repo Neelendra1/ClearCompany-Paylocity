@@ -1,0 +1,17 @@
+name: PR-Agent Audit with Docker
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  audit-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run PR-Agent with Docker
+        run: |
+          docker run --rm \
+            -v $(pwd):/app \
+            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+            -e OPENAI_KEY="" \
+            codiumai/pr-agent:latest \
+            --pr_url ${{ github.event.pull_request.html_url }} --command /review
