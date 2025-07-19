@@ -1,0 +1,22 @@
+[pr_reviewer]
+     enable_review_labels = true
+     review_categories = ["architecture", "code_quality", "security", "performance", "structure"]
+     extra_instructions = """
+     Use the following files in copilot/ for standards:
+     - architectureauditor-v1.0.md for architecture guidelines.
+     - codeauditor-v1.0.md for code quality.
+     - codeperformanceauditor-v1.0.md for performance.
+     - codesecurityauditor-v1.0.md for security.
+     - projectstructureauditor-v1.0.md for structure.
+     - Enforce all rules defined in these files.
+     """
+     publish_labels = true
+     persistent_comment = true
+
+     [pr_description]
+     publish_description_as_comment = true
+     auto_approve_small_prs = false
+
+     [model]
+     name = "deepseek"
+     max_tokens = 4096
