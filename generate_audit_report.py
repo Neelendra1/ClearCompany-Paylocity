@@ -28,7 +28,7 @@ def generate_markdown_audit_report(pr_url, pr_number):
             f.write(markdown_content)
         return markdown_content
     
-    if __name__ == "__main__":
+if __name__ == "__main__":
         pr_url = os.getenv("PR_URL")
         pr_number = os.getenv("PR_NUMBER")
         generate_markdown_audit_report(pr_url, pr_number)
